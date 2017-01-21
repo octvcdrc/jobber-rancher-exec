@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Some basic checks to make sure we use the bes t
+# Some basic checks to make sure we use this command correctly
 USAGE="Usage: rancher-exec StackName_ServiceName \"command to execute\""
 if [ $# -eq 0 ]; then
 	echo "No arguments supplied"
@@ -20,6 +20,7 @@ if [ $# -gt 2 ]; then
 	exit 1
 fi
 
+# The real deal. Based on https://github.com/sammarks/docker-rancher-backup/blob/master/backup.sh
 for i in $(docker ps --format="{{ .ID }}"); do
 
         CONTAINER=$(docker inspect --format="{{ json .Config.Labels }}" $i | jq ".[\"io.rancher.project_service.name\"]" | sed -e 's/^"//'  -e 's/"$//' -e 's/\//_/' )

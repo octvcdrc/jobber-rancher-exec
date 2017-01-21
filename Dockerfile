@@ -1,4 +1,4 @@
-#We need alpine 3.4 due to a bug when build go things. https://bugs.alpinelinux.org/issues/6628
+#We need alpine 3.4 due to an issue when building go things. https://bugs.alpinelinux.org/issues/6628
 FROM alpine:3.4
 
 #Based on https://github.com/blacklabelops/jobber-cron and https://github.com/meltwater/docker-cleanup
