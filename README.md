@@ -19,6 +19,7 @@ rancher-exec StackName_ServiceName 'command to execute > output_to_some_file'
 ~~~
 
 So basically if you have a MariaDB container in a Databases stack and you want to back up the DB every day at 2am :
+(replace * with a number)
 
 * JOB_NAME*=Some backup of my DB
 * JOB_COMMAND*=rancher-exec Databases_MariaDB 'mysqldump --all-databases > /backup/backup.sql'
